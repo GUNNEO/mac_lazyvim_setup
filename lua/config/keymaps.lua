@@ -25,7 +25,7 @@ vim.api.nvim_create_user_command("Cppath", function()
   vim.fn.setreg("+", path)
   vim.notify('Copied "' .. path .. '" to the clipboard!')
 end, {})
-keymap.set("n", "<leader>cf", ":Cppath<CR>", { noremap = true, desc = "copy current file path" })
+keymap.set("n", "<leader>cp", ":Cppath<CR>", { noremap = true, desc = "copy current file path" })
 
 -- Delete .DS_Store file
 vim.api.nvim_create_user_command("CleanDSStoreFiles", function()
@@ -55,20 +55,6 @@ keymap.set(
   "<cmd>Telescope grep_string<CR>",
   { noremap = true, silent = true, desc = "find string under cursor dir" }
 ) -- find string under cursor in current working directory
-
--- Move between buffers
-keymap.set("n", "<leader>bn", "<cmd>:bn<CR>", { noremap = true, silent = true, desc = "next buffer" }) -- move to the next buffer
-keymap.set("n", "<leader>bp", "<cmd>:bp<CR>", { noremap = true, silent = true, desc = "prev buffer" }) -- move to the previous buffer
-
--- Auto run file
-keymap.set("n", "<leader>ll", "<cmd>!lua %<CR>", { noremap = true, desc = "run lua file" })
-keymap.set("n", "<leader>pp", "<cmd>!python3 %<CR>", { noremap = true, desc = "run python file" })
-keymap.set(
-  "n",
-  "<leader>cpp",
-  ":w<CR>:!clang++ -g -arch arm64 % -o %:r && %:r<CR>",
-  { noremap = true, desc = "run cpp file" }
-)
 
 -- Latex
 keymap.set("n", "<leader>lt", "<cmd>VimtexCompile<CR>", { noremap = true, silent = true, desc = "compile tex file" })

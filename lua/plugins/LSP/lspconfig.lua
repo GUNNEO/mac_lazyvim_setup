@@ -104,8 +104,8 @@ return {
                 plugins = {
                   pycodestyle = {
                     enabled = true,
-                    ignore = { "E501", "E231" },
-                    maxLineLength = 120,
+                    ignore = { "E501", "E231", "E402", "E741" },
+                    maxLineLength = 160,
                   },
                   yapf = { enabled = true },
                 },
