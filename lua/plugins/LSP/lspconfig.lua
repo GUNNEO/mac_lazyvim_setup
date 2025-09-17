@@ -99,6 +99,7 @@ return {
           pylsp = {
             mason = false,
             filetypes = { "python" },
+            timeout = 20000,
             settings = {
               pylsp = {
                 plugins = {
