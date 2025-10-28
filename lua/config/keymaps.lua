@@ -1,7 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
 local keymap = vim.keymap -- for conciseness
 
 ---------------------
@@ -56,8 +52,5 @@ keymap.set(
   { noremap = true, silent = true, desc = "find string under cursor dir" }
 ) -- find string under cursor in current working directory
 
--- Latex
-keymap.set("n", "<leader>lt", "<cmd>VimtexCompile<CR>", { noremap = true, silent = true, desc = "compile tex file" })
-keymap.set("n", "<leader>lv", "<cmd>VimtexView<CR>", { noremap = true, silent = true, desc = "view tex file" })
-keymap.set("n", "<leader>zp", "<cmd>!zathura '%'<CR>", { noremap = true, silent = true, desc = "zathura" })
+-- open current file
 keymap.set("n", "<leader>op", "<cmd>!open '%'<CR>", { noremap = true, silent = true, desc = "open file" })

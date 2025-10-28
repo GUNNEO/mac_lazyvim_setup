@@ -2,6 +2,7 @@ return {
   -- First plugin: telescope.nvim
   {
     "nvim-telescope/telescope.nvim",
+    branch = "master",
     tag = "0.1.8",
     dependencies = { "nvim-lua/plenary.nvim" },
   },
@@ -31,6 +32,9 @@ return {
         },
         -- configure custom mappings
         defaults = {
+          preview = {
+            treesitter = false,
+          },
           mappings = {
             i = {
               ["<C-k>"] = actions.move_selection_previous, -- move to prev result

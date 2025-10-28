@@ -1,7 +1,7 @@
 -- mason configuration to install mason pkgs
 return {
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     cmd = "Mason",
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
@@ -9,6 +9,7 @@ return {
     opts = {
       ensure_installed = {
         -- lsp plugins
+        "lua-language-server",
         "stylua",
         "shfmt",
         "typescript-language-server",
@@ -22,8 +23,8 @@ return {
         "prettier", -- ts/js formatter
         "stylua", -- lua formatter
         "eslint_d", -- ts/js linter
+        "autopep8", -- python formatter
         "shfmt", --sh script formatter
-        "autopep8", --python formatter
         "markdown-toc", -- markdown formatter
       },
     },
