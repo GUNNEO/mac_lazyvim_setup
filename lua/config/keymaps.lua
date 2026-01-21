@@ -38,5 +38,13 @@ keymap.set(
   { noremap = true, silent = true, desc = "find string under cursor dir" }
 ) -- find string under cursor in current working directory
 
+-- lazygit
+vim.keymap.set(
+  "n",
+  "<leader>lg",
+  "<cmd>lua _lazygit_toggle()<CR>",
+  { noremap = true, silent = true, desc = "Toggle Lazygit" }
+)
+
 -- open current file
 keymap.set("n", "<leader>op", "<cmd>!open '%'<CR>", { noremap = true, silent = true, desc = "open file" })
