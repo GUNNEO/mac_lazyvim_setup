@@ -16,23 +16,9 @@ keymap.set("n", "<leader>0", "<C-x>", { noremap = true, silent = true, desc = "d
 
 -- File path
 keymap.set("n", "<leader>fp", ":echo expand('%:p')<CR>")
-vim.api.nvim_create_user_command("Cppath", function()
-  local path = vim.fn.expand("%:p")
-  vim.fn.setreg("+", path)
-  vim.notify('Copied "' .. path .. '" to the clipboard!')
-end, {})
 keymap.set("n", "<leader>cp", ":Cppath<CR>", { noremap = true, desc = "copy current file path" })
 
 -- Delete .DS_Store file
-vim.api.nvim_create_user_command("CleanDSStoreFiles", function()
-  -- Find all .DS_Store files recursively
-  local current_dir = vim.fn.getcwd()
-  local ds_store_files = vim.fn.systemlist("find " .. current_dir .. " -name .DS_Store")
-  for _, file in ipairs(ds_store_files) do
-    vim.fn.delete(file) -- Delete each .DS_Store file
-  end
-  vim.notify("Cleaned all .DS_Store files in the current directory.")
-end, {})
 keymap.set("n", "<leader>ds", ":CleanDSStoreFiles<CR>", { noremap = true, desc = "clear all ds_store_files" })
 
 -- Vim-maximizer

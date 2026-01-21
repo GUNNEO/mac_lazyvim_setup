@@ -20,7 +20,7 @@ return {
         below = 0,
       },
     },
-    ft = { "markdown", "norg", "rmd", "org", "codecompanion" },
+    ft = { "markdown", "norg", "rmd", "org", "codecompanion", "python", "c", "cpp" },
     config = function(_, opts)
       require("render-markdown").setup(opts)
       Snacks.toggle({
