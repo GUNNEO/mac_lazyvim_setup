@@ -14,14 +14,12 @@ return {
         {
           filter = {
             event = "msg_show",
-            -- find = { "^!python3" },
             any = {
               { find = "%d+L, %d+B" },
               { find = "; after #%d+" },
               { find = "; before #%d+" },
             },
           },
-          -- opts = { skip = true },
           view = "mini",
         },
       },

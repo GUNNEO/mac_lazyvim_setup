@@ -21,11 +21,16 @@ return {
             return #diag > 0
           end,
         },
+        ["shfmt"] = {
+          prepend_args = { "-i", "2", "-ci" },
+        },
       },
       formatters_by_ft = {
         ["markdown"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
         ["markdown.mdx"] = { "prettier", "markdownlint-cli2", "markdown-toc" },
-        ["python"] = { "autopep8" },
+        ["python"] = { "ruff_format", "ruff_fix" },
+        ["sh"] = { "shfmt" },
+        ["bash"] = { "shfmt" },
       },
     },
   },
